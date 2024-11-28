@@ -14,7 +14,7 @@ cursor = connection.cursor()
 #Query2 - select only queen from the artist table 
 #cursor.execute('SELECT * FROM "Artist" WHERE "Name"= %s', ["Queen"])
 
-cursor.execute('SELECT * FROM "Artist" WHERE "Name" =%s', ["Oasis"])
+cursor.execute('SELECT * FROM "Artist" WHERE "Name" =%s', ["Aerosmith"])
 
 #fetch the results (multiple)
 #results = cursor.fetchall()
