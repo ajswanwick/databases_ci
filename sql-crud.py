@@ -101,11 +101,44 @@ adam_swanwick = Programmer(
 #session.add(margaret_hamilton)
 #session.add(bill_gates)
 #session.add(tim_berners_lee)
-session.add(adam_swanwick)
+#session.add(adam_swanwick)
 
 #commit your session to the database
 
-session.commit()
+#session.commit()
+#programmer =session.query(Programmer).filter_by(id=7).first()
+#programmer.famous_for = "World President"
+
+#session.commit()
+
+#people=session.query(Programmer)
+#for person in people:
+ #   if person.gender == "F":
+  #      person.gender = "Female"
+   # elif person.gender == "M":
+    #    person.gender = "Male"
+    #else:
+     #   print("Gender not defined")
+    #session.commit()    
+
+  # deleting a single recorrd
+fname = input("Enter a first name:")  
+lname = input("Enter a last name:") 
+programmer = session.query(Programmer).filter_by(first_name=fname, last_name=lname).first()
+# defensive programming
+if programmer is not None:
+    print("Programmer Found", programmer.first_name + " " + programmer.last_name )
+    confirmation = input("Are you sure youwant to delete this record?(y/n)")
+    if confirmation.lower() == "y":
+        session.delete(programmer)
+        session.commit()
+        print("Programmer has been deleted")
+    else:
+        print("Programmer not deleted")    
+
+else:
+    print("No records found")
+
 
 # query the database to find all programmers
 programmers = session.query(Programmer)
