@@ -11,7 +11,7 @@ meta = MetaData(db)
 # Creates variable for artist table 
 artist_table = Table(
     "Artist", meta, 
-    Column("AtistId", Integer, primary_key=True),
+    Column("ArtistId", Integer, primary_key=True),
     Column("Name", String)
     )
 
